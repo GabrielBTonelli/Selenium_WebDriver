@@ -18,7 +18,7 @@ class TestOrderingSushi:
 
         # username and password insertion
         user_name_insert = driver.find_element(By.XPATH, "//*[@id='user_login']")
-        user_name_insert.send_keys("Gabriel Tonelli")
+        user_name_insert.send_keys("")
 
         password_insert = driver.find_element(By.XPATH, "//*[@id='user_pass']")
         password_insert.send_keys("")
