@@ -9,7 +9,7 @@ class TestStanleyCaneca:
 
     @pytest.mark.stanley
     @pytest.mark.soldOut
-    def test_canecona(self, driver):
+    def test_tem_canecona(self, driver):
         # go to webpage
         driver.get("https://eu.stanley1913.com/products/adventure-quencher-h2-0-flowstate-tumbler-40-oz")
 

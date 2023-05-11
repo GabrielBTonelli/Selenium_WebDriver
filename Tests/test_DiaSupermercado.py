@@ -28,4 +28,4 @@ class TestPromoGuinnessDia:
         # verify if product price is < than 2,99
         price_locator = driver.find_element(By.XPATH, "//*[@id='productgridcontainer']/div[1]/div/div/a/div[2]/div/p[1]")
         price_text = price_locator.text
-        assert price_text != "2,99 €", "Price now is " + price_text
+        assert price_text != "2,99 €", "Price still " + price_text

@@ -10,7 +10,7 @@ class BasePage:
         self._driver = driver
     
     def _find(self, locator: tuple) -> WebElement:
-        return self._driver.find_element(*locator)                 #the * automatcaly calls the By to complement the 'locator' tuple.
+        return self._driver.find_element(*locator)                 # the * automatcaly calls the By to complement the 'locator' tuple.
 
     def _type(self, locator: tuple, text: str, time: int = 10):
         self._wait_until_element_is_visible(locator, time)
