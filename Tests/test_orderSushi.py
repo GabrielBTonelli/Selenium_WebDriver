@@ -6,6 +6,7 @@ import pytest
 
 class TestOrderingSushi:
 
+    @pytest.mark.sushiOrder
     def test_order_sushi(self, driver):
 
         # go to webpage
