@@ -19,6 +19,7 @@ class TestStanleyCaneca:
         assert sold_out_txt != "SOLD OUT", "Still Sold Out"
 
     @pytest.mark.stanley
+    @pytest.mark.price
     def test_price_canecona(self, driver):
         # go to webpage
         driver.get("https://eu.stanley1913.com/products/adventure-quencher-h2-0-flowstate-tumbler-40-oz")
@@ -26,4 +27,4 @@ class TestStanleyCaneca:
         # check if the price still 49,95
         price_locator = driver.find_element(By.XPATH, "//*[@id='ProductPrice-7510939304136']")
         price_locator_txt = price_locator.text
-        assert price_locator_txt == "€49,95", "Price now is" + price_locator_txt
+        assert price_locator_txt != "€49,95", "Price still " + price_locator_txt
