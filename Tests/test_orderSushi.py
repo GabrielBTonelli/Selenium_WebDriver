@@ -1,7 +1,5 @@
 import time
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as ec
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 import pytest
 
@@ -65,24 +63,20 @@ class TestOrderingSushi:
         #--------------------------------------------------------------------------------------------------------------------Delivery data insert
         nombre = driver.find_element(By.XPATH, "//*[@id='cname']")                         # name 
         nombre.send_keys("")
-        time.sleep(3)
 
         direccion = driver.find_element(By.XPATH, "//*[@id='caddress']")                   # address
         direccion.send_keys("")
-        time.sleep(3)
 
         telefono = driver.find_element(By.XPATH, "//*[@id='ctel']")                        # phone number
         telefono.send_keys("")
-        time.sleep(3)
 
         comentarios = driver.find_element(By.XPATH, "//*[@id='ccomments']")                # comment
         comentarios.send_keys("El Maki Dragon SIN salsa y SIN crema porfa. Muchas gracias. =)")
-        time.sleep(3)
 
         #--------------------------------------------------------------------------------------------------------------------Select card payment method
         tarjeta_payment = driver.find_element(By.XPATH, "//*[@id='wppizza-gateway-ccod']")
         tarjeta_payment.click()
-        time.sleep(3)
+        time.sleep(2)
 
         #--------------------------------------------------------------------------------------------------------------------Click Enviar Pedido button
         # enviar_pedido = driver.find_element(By.XPATH, "//*[@id='wppizza-ordernow']")
