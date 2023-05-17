@@ -18,10 +18,10 @@ class TestOrderingSushi:
 
         #--------------------------------------------------------------------------------------------------------------------username and password insertion
         user_name_insert = driver.find_element(By.XPATH, "//*[@id='user_login']")
-        user_name_insert.send_keys("")                                       # insert login user name
+        user_name_insert.send_keys("")                           # insert login user name
 
         password_insert = driver.find_element(By.XPATH, "//*[@id='user_pass']")
-        password_insert.send_keys("")                                                # insert login user password
+        password_insert.send_keys("")                            # insert login user password
 
         #--------------------------------------------------------------------------------------------------------------------Click on loggin button
         driver.find_element(By.XPATH, "//*[@id='loginform']/div[3]/button").click()
@@ -79,5 +79,10 @@ class TestOrderingSushi:
         time.sleep(2)
 
         #--------------------------------------------------------------------------------------------------------------------Click Enviar Pedido button
-        # enviar_pedido = driver.find_element(By.XPATH, "//*[@id='wppizza-ordernow']")
-        # enviar_pedido.click()
+        enviar_pedido = driver.find_element(By.XPATH, "//*[@id='wppizza-ordernow']")
+        enviar_pedido.click()
+        time.sleep(5)
+
+        #--------------------------------------------------------------------------------------------------------------------Assertion
+        # confirmation_message = driver.find_element(By.XPATH, "").text
+        # assert confirmation_message == "", "The order wasn't completed, try again."
