@@ -84,5 +84,5 @@ class TestOrderingSushi:
         time.sleep(5)
 
         #--------------------------------------------------------------------------------------------------------------------Assertion
-        # confirmation_message = driver.find_element(By.XPATH, "").text
-        # assert confirmation_message == "", "The order wasn't completed, try again."
+        confirmation_message = driver.find_element(By.XPATH, "//*[@id='wppizza-order-thankyoupage-1-591']/p").text
+        assert confirmation_message == "gracias, hemos recibido su orden", "The order wasn't completed, try again."
