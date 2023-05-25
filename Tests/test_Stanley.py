@@ -1,11 +1,8 @@
 import time
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.keys import Keys
 from page_objects import po_Stanley
 import pytest
-
 
 class TestStanleyCaneca:
 
@@ -27,13 +24,13 @@ class TestStanleyCaneca:
     # @pytest.mark.soldOut
     def test_iceflow_89ml(self, driver):
         po_Stanley.BasePage.openPage(self, driver)
-        po_Stanley.BasePage.searchButton(self, driver)
-        
+        po_Stanley.BasePage.productLocalizer(self, driver)
+         
         # seach for Stanley Classic Iceflow Flip
         search_input = driver.find_element(By.XPATH, "//*[@id='HeaderSearchForm']/input[2]")
         search_input.send_keys("Stanley Classic Iceflow Flip")
         search_input.send_keys(Keys.ENTER)
-        time.sleep(3)
+        time.sleep(2)
         
         # IceFlow option click
         iceflow_option = driver.find_element(By.XPATH, "//*[@id='MainContent']/div/div/div/div/div[2]/div[2]/div[1]/a")
@@ -48,13 +45,13 @@ class TestStanleyCaneca:
     # @pytest.mark.soldOut
     def test_goFlip_650mL(self, driver):
         po_Stanley.BasePage.openPage(self, driver)
-        po_Stanley.BasePage.searchButton(self, driver)
+        po_Stanley.BasePage.productLocalizer(self, driver)
         
         # seach for Stanley Go Flip
         search_input = driver.find_element(By.XPATH, "//*[@id='HeaderSearchForm']/input[2]")
         search_input.send_keys("STANLEY GO FLIP STRAW WATER BOTTLE | 0.65L")
         search_input.send_keys(Keys.ENTER)
-        time.sleep(3)
+        time.sleep(2)
         
         # GoFlip option click
         goFlip_option = driver.find_element(By.XPATH, "//*[@id='MainContent']/div/div/div/div/div[2]/div[1]/div[1]/a")
