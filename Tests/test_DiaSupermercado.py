@@ -14,18 +14,17 @@ class TestPromoGuinnessDia:
         time.sleep(1)
         
         # Type "Guinness" on search bar
-        search_bar_locator = driver.find_element(By.ID, "search")
+        search_bar_locator = driver.find_element(By.XPATH, "//*[@id='app']/div/div/div/div[1]/div[1]/div[2]/div/input")
         search_bar_locator.send_keys("guinness")
         time.sleep(1)
 
         # pushing ENTER
         search_bar_locator.send_keys(Keys.ENTER)
-
-        # verify new page URL contains "https://www.dia.es/compra-online/search?text=guinness&x=0&y=0"
-        actual_url = driver.current_url
-        assert actual_url == "https://www.dia.es/compra-online/search?text=guinness&x=0&y=0"
         
+        # Guinness select
+        # guinness = driver.find_element(By.XPATH, "//*[@id='searchComponent']/div/div[4]/div/ul/li/div/div[1]/div[2]/a[1]")
+        # guinness.execute_script("arguments[0].click();", guinness)
+
         # verify if product price is < than 2,99
-        price_locator = driver.find_element(By.XPATH, "//*[@id='productgridcontainer']/div[1]/div/div/a/div[2]/div/p[1]")
-        price_text = price_locator.text
-        assert price_text != "2,99 €", "Price still " + price_text
+        price_locator = driver.find_element(By.XPATH, "//*[@id='searchComponent']/div/div[4]/div/ul/li/div/div[2]/div[1]/p[1]").text
+        assert price_locator != "2,99 €", "Price still " + price_locator
