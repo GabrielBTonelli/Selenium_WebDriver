@@ -33,13 +33,14 @@ class TestStanleyCaneca:
         time.sleep(2)
         
         # IceFlow option click
-        iceflow_option = driver.find_element(By.XPATH, "//*[@id='MainContent']/div/div/div/div/div[2]/div[1]/div[1]/a/div[1]/div[7]")
+        iceflow_option = driver.find_element(By.XPATH, "//*[@id='MainContent']/div/div/div/div/div[2]/div[2]/div[1]/a")
         driver.execute_script("arguments[0].click();", iceflow_option)
         time.sleep(1)
         
-        # check Iceflow availability
+        # check Sold Out is displayed
         add_to_cart = driver.find_element(By.XPATH, "//*[@id='AddToCartText-7520348700872']").text
         assert add_to_cart == "ADD TO CART", "The Classic IceFlow 890mL still Sold Out"
+            
 
     @pytest.mark.stanley
     # @pytest.mark.soldOut
