@@ -33,7 +33,7 @@ class TestStanleyCaneca:
         time.sleep(2)
         
         # IceFlow option click
-        iceflow_option = driver.find_element(By.XPATH, "//*[@id='MainContent']/div/div/div/div/div[2]/div[2]/div[1]/a")
+        iceflow_option = driver.find_element(By.XPATH, "//*[@id='MainContent']/div/div/div/div/div[2]/div[1]/div[1]/a")
         driver.execute_script("arguments[0].click();", iceflow_option)
         time.sleep(1)
         

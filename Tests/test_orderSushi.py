@@ -71,12 +71,12 @@ class TestOrderingSushi:
         telefono.send_keys("")
 
         comentarios = driver.find_element(By.XPATH, "//*[@id='ccomments']")                # comment
-        comentarios.send_keys("El Maki Dragon SIN salsa y SIN crema porfa. Muchas gracias. =)")
+        comentarios.send_keys("El Maki Dragon SIN salsa y SIN crema porfa. No necessita los pallilos. Muchas gracias. =)")
 
         #--------------------------------------------------------------------------------------------------------------------Select card payment method
         tarjeta_payment = driver.find_element(By.XPATH, "//*[@id='wppizza-gateway-ccod']")
         tarjeta_payment.click()
-        time.sleep(2)
+        time.sleep(8)
 
         #--------------------------------------------------------------------------------------------------------------------Click Enviar Pedido button
         enviar_pedido = driver.find_element(By.XPATH, "//*[@id='wppizza-ordernow']")
@@ -85,4 +85,4 @@ class TestOrderingSushi:
 
         #--------------------------------------------------------------------------------------------------------------------Assertion
         confirmation_message = driver.find_element(By.XPATH, "//*[@id='wppizza-order-thankyoupage-1-591']/p").text
-        assert confirmation_message == "gracias, hemos recibido su orden", "The order wasn't completed, try again."
+        assert confirmation_message == "gracias, hemos recibido su orden", "The order wasn't completed, try again."     # need to improove this
